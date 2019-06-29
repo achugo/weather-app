@@ -33,7 +33,9 @@ const updateUI = (data) => {
 
     weather.IsDayTime ? timeUrl = 'img/day.svg' : timeUrl ='img/night.svg';
 
-    imgurl.setAttribute('src', timeUrl)
+    /**  let timeUrl = weather.IsDayTime ? timeUrl = 'img/day.svg' : timeUrl ='img/night.svg';
+
+    imgurl.setAttribute('src', timeUrl) */
 
     //update icon with api icon 
     let { WeatherIcon } = weather
