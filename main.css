@@ -1,5 +1,5 @@
 body{
-    background: #eeeded;
+    background: #bbecbd;
     letter-spacing: 0.2em;
     font-size: 0.8em;
 
@@ -7,4 +7,13 @@ body{
 
 .container {
     max-width: 400px;
+}
+
+.icon{
+    position: relative;
+    top:-50px;
+    margin-bottom: -50px;
+    border-radius: 50%;
+    width: 100px;
+
 }

@@ -18,7 +18,6 @@ const getCity = async (city) => {
     const response = await fetch(baseurl + query);
     const data = await response.json()
     return data[0];
-    
 }
 
 

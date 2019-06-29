@@ -1,6 +1,8 @@
 const cityForm = document.querySelector('form');
 const card = document.querySelector('.card');
 const details = document.querySelector('.details');
+const imgurl = document.querySelector('img.time');
+const iconUrl = document.querySelector('.icon img')
 
 const updateUI = (data) => {
     // const cityDets = data.city;
@@ -25,6 +27,17 @@ const updateUI = (data) => {
     if (card.classList.contains('d-none')) {
         card.classList.remove('d-none')
     }
+
+    //update time image
+    let timeUrl = null;
+
+    weather.IsDayTime ? timeUrl = 'img/day.svg' : timeUrl ='img/night.svg';
+
+    imgurl.setAttribute('src', timeUrl)
+
+    //update icon with api icon 
+    let { WeatherIcon } = weather
+    iconUrl.setAttribute('src', `img/icons/${WeatherIcon}.svg`)
 }
 
 const updateCity = async (city) => {
