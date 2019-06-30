@@ -33,9 +33,9 @@ const updateUI = (data) => {
 
     weather.IsDayTime ? timeUrl = 'img/day.svg' : timeUrl ='img/night.svg';
 
-    /**  let timeUrl = weather.IsDayTime ? timeUrl = 'img/day.svg' : timeUrl ='img/night.svg';
+    /**  let timeUrl = weather.IsDayTime ? timeUrl = 'img/day.svg' : timeUrl ='img/night.svg'; */
 
-    imgurl.setAttribute('src', timeUrl) */
+    imgurl.setAttribute('src', timeUrl) 
 
     //update icon with api icon 
     let { WeatherIcon } = weather
@@ -58,8 +58,17 @@ cityForm.addEventListener('submit', e => {
 
     const city  = cityForm.city.value.trim();
     cityForm.reset();
+    localStorage.setItem('city', city)
 
     updateCity(city)
         .then((data) => updateUI(data))
         .catch((err) => console.log(err))
 })
+
+if(localStorage.getItem('city') !== null){
+    let city = localStorage.getItem('city');
+
+    updateCity(city)
+        .then((data) => updateUI(data))
+        .catch((err) => console.log(err))
+}
