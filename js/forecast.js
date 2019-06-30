@@ -1,5 +1,5 @@
 
-
+const key = API.key;
 //http://dataservice.accuweather.com/currentconditions/v1/
 const getWeather = async (id) => {
 
